@@ -36,7 +36,7 @@ public abstract class Character{
 	public void move(Map map,int dx,int dy) {
 		int newX=x+dx;
 		int newY=y+dy;
-		
+		//这是修改之后的文件
 		if(newX>=0 && newX<map.getWidth() && newY>=0 && newY<map.getHeight() && map.getCharacter(newX,newY)==null) {
 			x=newX;
 			y=newY;
