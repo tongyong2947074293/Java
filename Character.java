@@ -5,13 +5,16 @@ public abstract class Character{
 	protected int health;
 	protected char icon;
 	protected int attackPower;
+	protected Map map; 
 	
-	public Character(int x,int y,int health,int attackPower,char icon) {
+	public Character(int x,int y,int health,int attackPower,char icon,Map map) {
 		this.x=x;
 		this.y=y;
 		this.health=health;
 		this.icon=icon;
 		this.attackPower=attackPower;
+		this.map=map;
+		map.setCharacter(this);
 	}
 	
 	public int getX() {
@@ -40,7 +43,7 @@ public abstract class Character{
 		if(newX>=0 && newX<map.getWidth() && newY>=0 && newY<map.getHeight() && map.getCharacter(newX,newY)==null) {
 			x=newX;
 			y=newY;
-
+			
 			map.clearOldCharacterPosition(this);//clear character's old position
 			map.setCharacter(this);//set Character's new position
 		}
